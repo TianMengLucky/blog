@@ -6,6 +6,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build && pagefind --site dist",
+    "build:gh": "cross-env DEPLOY=GH SITE=abab astro build && pagefind --site dist",
+    "build:vercel": "cross-env DEPLOY=VE SITE=abab build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
     "type-check": "tsc --noEmit --isolatedDeclarations",
@@ -63,6 +65,7 @@
     "@types/markdown-it": "^14.1.2",
     "@types/mdast": "^4.0.4",
     "@types/sanitize-html": "^2.13.0",
+    "cross-env": "^7.0.3",
     "postcss-import": "^16.1.0",
     "postcss-nesting": "^13.0.1"
   },

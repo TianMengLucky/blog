@@ -19,9 +19,13 @@ import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
+const DefaultSite = 'https://fuwari.vercel.app/';
+const _site = process.env.SITE || DefaultSite;
+const _deploy = process.env.DEPLOY || "Local";
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://fuwari.vercel.app/",
+  site: _site,
   base: "/",
   trailingSlash: "always",
   integrations: [

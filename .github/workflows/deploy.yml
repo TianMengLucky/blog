@@ -1,0 +1,13 @@
+name: Blog Deploy
+on:
+    pull_request:
+        branches:
+            - publish
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        if: github.repository_owner == 'TianMengLucky'
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
