@@ -2,5 +2,5 @@
     "framework": "astro",
     "installCommand": "pnpm install",
     "devCommand": "pnpm dev",
-    "buildCommand": "pnpm build:vercel"
+    "buildCommand": "node -v && pnpm build:vercel"
 }

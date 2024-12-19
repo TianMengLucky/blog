@@ -20,11 +20,11 @@ import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 import vercel from '@astrojs/vercel/serverless';
 
-const DefaultSite = 'https://fuwari.vercel.app/';
+const DefaultSite = 'https://localhost:4321/'
 const _site = process.env.SITE || DefaultSite;
 const _deploy = process.env.DEPLOY || "Local";
-const _output = _deploy === 'VE' ? 'server' : 'static'
-const _adapter = _deploy === "VE" ? vercel() : undefined;
+const _output = /* _deploy === 'VE' ? 'server' :  */'static'
+const _adapter = /* _deploy === "VE" ? vercel() : */ undefined;
 const _base = _deploy === "VE" ? "/" : "/blog";
 
 // https://astro.build/config
