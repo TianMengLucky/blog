@@ -18,7 +18,7 @@ import { GithubCardComponent } from "./src/plugins/rehype-component-github-card.
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
-import vercel from '@astrojs/vercel/serverless';
+/* import vercel from '@astrojs/vercel/serverless'; */
 
 const DefaultSite = 'https://localhost:4321/'
 const _site = process.env.SITE || DefaultSite;
