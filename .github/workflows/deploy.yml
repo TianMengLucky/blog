@@ -1,6 +1,6 @@
 name: Blog Deploy
 on:
-    pull_request:
+    push:
         branches:
             - publish
 
