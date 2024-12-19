@@ -41,12 +41,7 @@ export const navBarConfig: NavBarConfig = {
   links: [
     LinkPreset.Home,
     LinkPreset.Archive,
-    LinkPreset.About,
-    {
-      name: 'GitHub',
-      url: 'https://github.com/TianMengLucky/blog',     // Internal links should not include the base path, as it is automatically added
-      external: true,                               // Show an external link icon and will open in a new tab
-    },
+    LinkPreset.About
   ],
 }
 
@@ -55,14 +50,14 @@ export const profileConfig: ProfileConfig = {
   name: '天梦',
   bio: '如何找到我，与我联系',
   links: [
-    {
+  // Visit https://icones.js.org/ for icon codes
+  // You will need to install the corresponding icon set if it's not already included
+  // `pnpm add @iconify-json/<icon-set-name>`
+/*     {
       name: 'Twitter',
       icon: 'fa6-brands:twitter',       
-      // Visit https://icones.js.org/ for icon codes
-      // You will need to install the corresponding icon set if it's not already included
-      // `pnpm add @iconify-json/<icon-set-name>`
       url: 'https://x.com/Bili_TianMeng',
-    },
+    }, */
     {
       name: 'GitHub',
       icon: 'fa6-brands:github',
@@ -77,6 +72,11 @@ export const profileConfig: ProfileConfig = {
       name: 'bilibili',
       icon: 'fa6-brands:bilibili',
       url: 'https://space.bilibili.com/394107547'
+    },
+    {
+      name: 'tiktok',
+      icon: 'fa6-brands:tiktok',
+      url: 'https://v.douyin.com/iUaDHxnb'
     }
   ],
 }
