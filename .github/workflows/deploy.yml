@@ -19,17 +19,21 @@ jobs:
                 uses: actions/setup-node@v4
                 with:
                     node-version: 20
+                    cache: pnpm
+                    cache-dependency-path: ./pnpm-lock.yaml
             
             -   name: Install Dependencies
+                shell: "bash"
                 run: pnpm install
 
             -   name: Build
+                shell: "bash"
                 run: pnpm build:gh
             
             -   name: Upload Pages Artifact
                 uses: actions/upload-pages-artifact@v3
                 with:
-                    path: "./dist/"
+                    path: ./dist/
     
     Deploy:
         needs: build

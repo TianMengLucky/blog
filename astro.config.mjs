@@ -23,15 +23,16 @@ import vercel from '@astrojs/vercel/serverless';
 const DefaultSite = 'https://fuwari.vercel.app/';
 const _site = process.env.SITE || DefaultSite;
 const _deploy = process.env.DEPLOY || "Local";
-const _output = _deploy === "VE" ? "server" : "static";
+const _output = _deploy === 'VE' ? 'server' : 'static'
 const _adapter = _deploy === "VE" ? vercel() : undefined;
+const _base = _deploy === "VE" ? "/" : "/blog";
 
 // https://astro.build/config
 export default defineConfig({
   site: _site,
   output: _output,
   adapter: _adapter,
-  base: "/",
+  base: _base,
   trailingSlash: "always",
   integrations: [
     tailwind(
