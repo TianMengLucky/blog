@@ -1,1 +1,6 @@
-{}
+{
+    "framework": "astro",
+    "installCommand": "pnpm install",
+    "devCommand": "pnpm dev",
+    "buildCommand": "pnpm build:vercel"
+}
