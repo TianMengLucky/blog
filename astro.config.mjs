@@ -18,14 +18,19 @@ import { GithubCardComponent } from "./src/plugins/rehype-component-github-card.
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
+import vercel from '@astrojs/vercel/serverless';
 
 const DefaultSite = 'https://fuwari.vercel.app/';
 const _site = process.env.SITE || DefaultSite;
 const _deploy = process.env.DEPLOY || "Local";
+const _output = _deploy === "VE" ? "server" : "static";
+const _adapter = _deploy === "VE" ? vercel() : null;
 
 // https://astro.build/config
 export default defineConfig({
   site: _site,
+  output: _output,
+  adapter: _adapter,
   base: "/",
   trailingSlash: "always",
   integrations: [
