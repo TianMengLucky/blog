@@ -7,11 +7,11 @@
     "start": "astro dev",
     "build": "astro build && pagefind --site dist",
 
-    "build:github": "cross-env PLATFORM=Github SITE=https://tianmenglucky.github.io astro build && pagefind --site dist",
-    "build:vercel": "cross-env PLATFORM=Vercel SITE=https://tianmeng.vercel.app/ astro build && pagefind --site dist",
-    "build:netlify": "cross-env PLATFORM=Netlify SITE='' astro build && pagefind --site dist",
-    "build:cloudflare": "cross-env PLATFORM=Cloudflare SITE='' astro build && pagefind --site dist",
-    "build:deno": "cross-env PLATFORM=Deno SITE='' astro build && pagefind --site dist",
+    "build:github": "cross-env PLATFORM=Github SITE=https://github.luckey.icu astro build && pagefind --site dist",
+    "build:vercel": "cross-env PLATFORM=Vercel SITE=https://vercel.luckey.icu astro build && pagefind --site dist",
+    "build:netlify": "cross-env PLATFORM=Netlify SITE=https://netlify.luckey.icu astro build && pagefind --site dist",
+    "build:cloudflare": "cross-env PLATFORM=Cloudflare SITE=https://blog.luckey.icu astro build && pagefind --site dist",
+    "build:deno": "cross-env PLATFORM=Deno SITE=https://deno.luckey.icu astro build && pagefind --site dist",
 
     "build:ssr:vercel": "cross-env PLATFORM=Vercel SSR=true SITE='' astro build",
     "build:ssr:netlify": "cross-env PLATFORM=Netlify SSR=true SITE='' astro build",
