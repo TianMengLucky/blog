@@ -6,15 +6,16 @@
 
 通过下面连接访问:
 
-Github:https://tianmenglucky.github.io/blog/
+Github:https://github.luckey.icu
 
-Vercel:https://tianmeng.vercel.app/
+Vercel:https://vercel.luckey.icu
 
-Deno:在搞
+Deno:https://deno.luckey.icu
 
-cloudflare pages:在搞
+cloudflare pages:https://blog.luckey.icu
 
-netlify:在搞
+netlify:https://netlify.luckey.icu
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8c530af2-0306-4acc-bc7f-fcc7b35bef68/deploy-status)](https://app.netlify.com/sites/tianmeng/deploys)
 
 ## 🧞 指令
 
