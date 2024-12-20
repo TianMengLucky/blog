@@ -6,10 +6,24 @@
 
 通过下面连接访问:
 
-Github:https://tianmenglucky.github.io/blog/
+Github:
+- https://github.luckey.icu
 
-Vercel:https://tianmeng.vercel.app/
+Vercel:
+- https://vercel.luckey.icu
+- https://tianmeng.vercel.app
 
+netlify:
+- https://netlify.luckey.icu
+- https://tianmeng.netlify.app
+
+cloudflare pages:
+- https://blog.luckey.icu
+
+Deno:
+- https://deno.luckey.icu
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8c530af2-0306-4acc-bc7f-fcc7b35bef68/deploy-status)](https://app.netlify.com/sites/tianmeng/deploys)
 ## 🧞 指令
 
 下列指令均需要在项目根目录执行：

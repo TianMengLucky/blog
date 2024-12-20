@@ -1,13 +1,17 @@
-name: Blog Deploy
+name: Blog Deploy deno
 on:
     push:
         branches:
             - publish
 
 jobs:
-    build:
+    deploy:
         runs-on: ubuntu-latest
         if: github.repository_owner == 'TianMengLucky'
+        permissions:
+            id-token: write # Needed for auth with Deno Deploy
+            contents: read # Needed to clone the repository
+
         steps:
             -   name: Checkout
                 uses: actions/checkout@v2
@@ -28,27 +32,11 @@ jobs:
 
             -   name: Build
                 shell: "bash"
-                run: pnpm build:github
+                run: pnpm build:deno
             
-            -   name: Upload Pages Artifact
-                uses: actions/upload-pages-artifact@v3
+            -   name: Upload to Deno Deploy
+                uses: denoland/deployctl@v1
                 with:
-                    path: ./dist/
-    
-    Deploy:
-        needs: build
-        runs-on: ubuntu-latest
-        if: github.repository_owner == 'TianMengLucky'
-
-        permissions:
-            pages: write      # to deploy to Pages
-            id-token: write   # to verify the deployment originates from an appropriate source
-
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-            
-        steps:
-            -   name: Deploy to GitHub Pages
-                id: deployment
-                uses: actions/deploy-pages@v4
+                    project: tian-meng-blog
+                    entrypoint: jsr:@std/http/file-server
+                    root: dist
