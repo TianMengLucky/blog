@@ -10,15 +10,15 @@ Github:
 - https://github.luckey.icu
 
 Vercel:
-- https://vercel.luckey.icu
+- https://vercel.luckey.icu (国内推荐)
 - https://tianmeng.vercel.app
 
 netlify:
-- https://netlify.luckey.icu
-- https://tianmeng.netlify.app
+- https://netlify.luckey.icu (国内推荐)
+- https://tianmeng.netlify.app (国内推荐)
 
 cloudflare pages:
-- https://blog.luckey.icu
+- https://blog.luckey.icu (国内推荐)
 
 Deno:
 - https://deno.luckey.icu
