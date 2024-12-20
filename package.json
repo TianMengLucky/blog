@@ -6,22 +6,39 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build && pagefind --site dist",
-    "build:gh": "cross-env DEPLOY=GH SITE=https://tianmenglucky.github.io astro build && pagefind --site dist",
-    "build:vercel": "cross-env DEPLOY=VE SITE=https://tianmeng.vercel.app/ astro build && pagefind --site dist",
+
+    "build:github": "cross-env PLATFORM=Github SITE=https://tianmenglucky.github.io astro build && pagefind --site dist",
+    "build:vercel": "cross-env PLATFORM=Vercel SITE=https://tianmeng.vercel.app/ astro build && pagefind --site dist",
+    "build:netlify": "cross-env PLATFORM=Netlify SITE='' astro build && pagefind --site dist",
+    "build:cloudflare": "cross-env PLATFORM=Cloudflare SITE='' astro build && pagefind --site dist",
+    "build:deno": "cross-env PLATFORM=Deno SITE='' astro build && pagefind --site dist",
+
+    "build:ssr:vercel": "cross-env PLATFORM=Vercel SSR=true SITE='' astro build",
+    "build:ssr:netlify": "cross-env PLATFORM=Netlify SSR=true SITE='' astro build",
+    "build:ssr:cloudflare": "cross-env PLATFORM=Cloudflare SSR=true SITE='' astro build",
+    "build:ssr:deno": "cross-env PLATFORM=Deno SSR=true SITE='' astro build",
+
     "preview": "astro preview",
+    "preview:deno": "deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs",
+
+    "new-post": "node scripts/new-post.js",
+
     "astro": "astro",
     "type-check": "tsc --noEmit --isolatedDeclarations",
-    "new-post": "node scripts/new-post.js",
     "format": "biome format --write ./src",
     "lint": "biome check --apply ./src",
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@astrojs/cloudflare": "^11.2.0",
+    "@astrojs/netlify": "5.5.0",
     "@astrojs/rss": "^4.0.9",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/svelte": "^6.0.2",
     "@astrojs/tailwind": "^5.1.2",
+    "@astrojs/vercel": "7.8.2",
+    "@deno/astro-adapter": "0.1.5",
     "@fontsource-variable/jetbrains-mono": "^5.1.1",
     "@fontsource/roboto": "^5.1.0",
     "@iconify-json/fa6-brands": "^1.2.1",

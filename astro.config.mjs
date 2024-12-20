@@ -18,21 +18,14 @@ import { GithubCardComponent } from "./src/plugins/rehype-component-github-card.
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
-/* import vercel from '@astrojs/vercel/serverless'; */
-
-const DefaultSite = 'https://localhost:4321/'
-const _site = process.env.SITE || DefaultSite;
-const _deploy = process.env.DEPLOY || "Local";
-const _output = /* _deploy === 'VE' ? 'server' :  */'static'
-const _adapter = /* _deploy === "VE" ? vercel() : */ undefined;
-const _base = _deploy === "VE" ? "/" : "/blog";
+import buildSettings from "./buildSettings.ts";
 
 // https://astro.build/config
 export default defineConfig({
-  site: _site,
-  output: _output,
-  adapter: _adapter,
-  base: _base,
+  site: buildSettings.site,
+  output: buildSettings.output,
+  adapter: buildSettings.adapter,
+  base: buildSettings.base,
   trailingSlash: "always",
   integrations: [
     tailwind(

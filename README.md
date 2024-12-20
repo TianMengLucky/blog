@@ -10,6 +10,12 @@ Github:https://tianmenglucky.github.io/blog/
 
 Vercel:https://tianmeng.vercel.app/
 
+Deno:在搞
+
+cloudflare pages:在搞
+
+netlify:在搞
+
 ## 🧞 指令
 
 下列指令均需要在项目根目录执行：
