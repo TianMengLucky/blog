@@ -3,6 +3,7 @@
 使用 Fuwari + Astro 搭建的天梦的小站
 ::github{repo="TianMengLucky/blog"}
 ::github{repo="saicaca/fuwari"}
+::github{repo="withastro/astro"}
 
 ## 网站使用资源来源
 >
