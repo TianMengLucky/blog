@@ -41,6 +41,11 @@ export const navBarConfig: NavBarConfig = {
   links: [
     LinkPreset.Home,
     LinkPreset.Archive,
+    {
+      name: '友链',
+      url: '/link/',
+      icon: 'fa6-solid:link',
+    },
     LinkPreset.About
   ],
 }
