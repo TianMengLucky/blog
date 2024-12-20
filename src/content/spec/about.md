@@ -5,6 +5,22 @@
 ::github{repo="saicaca/fuwari"}
 ::github{repo="withastro/astro"}
 
+本站目前开放访问:
+:::tip
+下面列表根据作者访问体验排序，每个人视情况可能不同。
+:::
+
+- [Netlify](https://netlify.luckey.icu) (优选节点)
+- [Vercel](https://vercel.luckey.icu) (优选节点)
+- [Netlify](https://tianmeng.netlify.app) (默认解析)
+- [Cloudflare Pages](https://blog.luckey.icu)
+- [Deno Deploy](https://deno.luckey.icu)
+- [Github Page](https://github.luckey.icu)
+- [Vercel](https://tianmeng.vercel.app) (默认解析)
+
+
+## 天梦的简介
+
 ## 网站使用资源来源
 >
 > - [Unsplash](https://unsplash.com/)
