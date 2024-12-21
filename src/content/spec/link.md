@@ -4,6 +4,15 @@
 阿巴阿巴，慢慢完善吧。
 :::
 
+:::note
+图片资源已放置在 `public` ,可用于友链使用  
+`URL`格式为 `{URL}/images/{NAME}`  
+
+- [头像](https://vercel.luckey.icu/images/avatar.png)
+- [首页](https://vercel.luckey.icu/images/home-show.png)
+- [背景](https://vercel.luckey.icu/images/banner.png)
+:::
+
 <!-- :::note
 参考：https://blog.aulypc0x0.online/posts/add_friendspage_in_fuwari/  
 参考: https://suborbit.net/friends

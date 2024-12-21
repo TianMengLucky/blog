@@ -6,17 +6,19 @@ import type {
 } from './types/config'
 import { LinkPreset } from './types/config'
 
+// Relative to the /src directory. Relative to the /public directory if it starts with '/'
+
 export const siteConfig: SiteConfig = {
   title: '天梦的小站',
   subtitle: '喵喵喵',
-  lang: 'zh_CN',         // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko'
+  lang: 'zh_CN', 
   themeColor: {
     hue: 250,         // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
     fixed: false,     // Hide the theme color picker for visitors
   },
   banner: {
     enable: true,
-    src: 'assets/images/banner.png',   // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+    src: '/images/banner.png',   // Relative to the /src directory. Relative to the /public directory if it starts with '/'
     position: 'top',      // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
     credit: {
       enable: true,         // Display the credit text of the banner image
@@ -51,7 +53,7 @@ export const navBarConfig: NavBarConfig = {
 }
 
 export const profileConfig: ProfileConfig = {
-  avatar: 'assets/images/avatar.png',  // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+  avatar: '/images/avatar.png',
   name: '天梦',
   bio: '如何找到我，与我联系',
   links: [

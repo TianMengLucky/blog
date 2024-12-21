@@ -5,9 +5,14 @@
 ::github{repo="saicaca/fuwari"}
 ::github{repo="withastro/astro"}
 
-本站目前开放访问:
+访问节点列表:
+
 :::tip
 下面列表根据作者访问体验排序，每个人视情况可能不同。
+:::
+
+:::note
+[luckey.icu](https://luckey.icu)也有配备解析，但是能不能访问得看运气
 :::
 
 - [Netlify](https://netlify.luckey.icu) (优选节点)
