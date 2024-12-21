@@ -29,6 +29,7 @@ const linksCollection = defineCollection({
     description : z.string().optional(),
     icon : z.string().optional(),
     conent : z.array(z.string()).optional(),
+    image : z.string().optional(),
   })
 })
 
