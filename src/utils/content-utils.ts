@@ -1,14 +1,15 @@
-import { getCollection } from 'astro:content'
+import { getCollection, getEntry, render, type DataEntryMap } from 'astro:content'
 import type { BlogPostData } from '@/types/config'
 import I18nKey from '@i18n/i18nKey'
 import { i18n } from '@i18n/translation'
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 
 export async function getSortedPosts(): Promise<
-  { body: string, data: BlogPostData; slug: string }[]
+  { body: string, data: BlogPostData; id: string }[]
 > {
   const allBlogPosts = (await getCollection('posts', ({ data }) => {
     return import.meta.env.PROD ? data.draft !== true : true
-  })) as unknown as { body: string, data: BlogPostData; slug: string }[]
+  })) as unknown as { body: string, data: BlogPostData; id: string }[]
 
   const sorted = allBlogPosts.sort(
     (a: { data: BlogPostData }, b: { data: BlogPostData }) => {
@@ -19,11 +20,11 @@ export async function getSortedPosts(): Promise<
   )
 
   for (let i = 1; i < sorted.length; i++) {
-    sorted[i].data.nextSlug = sorted[i - 1].slug
+    sorted[i].data.nextSlug = sorted[i - 1].id
     sorted[i].data.nextTitle = sorted[i - 1].data.title
   }
   for (let i = 0; i < sorted.length - 1; i++) {
-    sorted[i].data.prevSlug = sorted[i + 1].slug
+    sorted[i].data.prevSlug = sorted[i + 1].id
     sorted[i].data.prevTitle = sorted[i + 1].data.title
   }
 
@@ -86,4 +87,16 @@ export async function getCategoryList(): Promise<Category[]> {
     ret.push({ name: c, count: count[c] })
   }
   return ret
+}
+
+export async function getContentByEntry<
+  C extends keyof DataEntryMap,
+  E extends keyof DataEntryMap[C] | (string & {}),
+>(collection: C, id: E): Promise<AstroComponentFactory | undefined> 
+{
+  var entry = await getEntry(collection, id);
+  if (!entry) 
+    return undefined;
+  var result = await render(entry);
+  return result.Content;
 }

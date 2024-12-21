@@ -1,21 +1,13 @@
 ---
-
 import MainGridLayout from '../layouts/MainGridLayout.astro'
+import ContentMarkdown from '@components/ContentMarkdown.astro'
 
-import { getEntry } from 'astro:content'
-import Markdown from '@components/misc/Markdown.astro'
-
-const Post = await getEntry('spec', 'link')
-
-const { Content } = await Post.render()
 ---
 
 <MainGridLayout title="友链" description="友情的力量">
     <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
         <div class="card-base z-10 px-9 py-6 relative w-full ">
-            <Markdown class="mt-2">
-                <Content />
-            </Markdown>
+            <ContentMarkdown collection='specs' id='link' className="mt-2"/>
         </div>
     </div>
 </MainGridLayout>

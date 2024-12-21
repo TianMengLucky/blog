@@ -1,8 +1,7 @@
 import { defineCollection, z } from 'astro:content'
+import { glob } from 'astro/loaders'
 
-const postsCollection = defineCollection({
-  type: 'content',
-  schema: z.object({
+const mdSchema = z.object({
     title: z.string(),
     published: z.date(),
     updated: z.date().optional(),
@@ -18,22 +17,32 @@ const postsCollection = defineCollection({
     prevSlug: z.string().default(''),
     nextTitle: z.string().default(''),
     nextSlug: z.string().default(''),
-  }),
+    });
+
+const postsCollection = defineCollection({
+  loader: glob({ pattern: 'posts/*.md', base: 'src/content/' }),
+  schema: mdSchema,
+})
+
+const specsCollection = defineCollection({
+loader: glob({ pattern: 'spec/*.md', base: 'src/content/' }),
 })
 
 const linksCollection = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: 'links/*.json', base: 'src/content/'}),
   schema: z.object({
-    name : z.string(),
-    link : z.string().url(),
-    description : z.string().optional(),
-    icon : z.string().optional(),
-    conent : z.array(z.string()).optional(),
-    image : z.string().optional(),
-  })
+    name: z.string(),
+    link: z.string().url(),
+    description: z.string().optional(),
+    icon: z.string().optional(),
+    conent: z.array(z.string()).optional(),
+    image: z.string().optional(),
+  }),
 })
 
+
 export const collections = {
-  posts: postsCollection,
-  links: linksCollection,
+  posts : postsCollection,
+  links : linksCollection,
+  specs : specsCollection,
 }

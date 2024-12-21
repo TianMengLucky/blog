@@ -1,0 +1,24 @@
+---
+import { getContentByEntry } from '@utils/content-utils';
+import type { DataEntryMap } from 'astro:content'
+import Markdown from './misc/Markdown.astro';
+
+type C = keyof DataEntryMap;
+type E = keyof DataEntryMap[C] | (string & {});
+interface Props {
+  collection: C
+  id: E,
+  className?: string
+}
+const {
+  collection,
+  id,
+  className
+} = Astro.props
+
+const Content = await getContentByEntry(collection, id);
+---
+
+<Markdown class={className ?? ''}>
+    {Content ? <Content/> : undefined}
+</Markdown>
