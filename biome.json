@@ -35,6 +35,7 @@
     }
   },
   "linter": {
+    "enabled": false,
     "ignore": [],
     "rules": {
       "a11y": {

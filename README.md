@@ -20,9 +20,6 @@ netlify:
 cloudflare pages:
 - https://blog.luckey.icu (国内推荐)
 
-Deno:
-- https://deno.luckey.icu
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8c530af2-0306-4acc-bc7f-fcc7b35bef68/deploy-status)](https://app.netlify.com/sites/tianmeng/deploys)
 ## 🧞 指令
 
@@ -37,3 +34,7 @@ Deno:
 | `pnpm new-post <filename>`        | 创建新文章                             |
 | `pnpm astro ...`                  | 执行 `astro add`, `astro check` 等指令 |
 | `pnpm astro --help`               | 显示 Astro CLI 帮助                   |
+
+啊啊啊啊，发癫.jpg  
+老子后面要大改 ！！！！！   
+评论系统啊，老婆列表啊，项目列表啊，赞助者列表啊，友链->朋友墙什么的！！！！

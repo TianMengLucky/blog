@@ -19,10 +19,11 @@
 - [Vercel](https://vercel.luckey.icu) (优选节点)
 - [Netlify](https://tianmeng.netlify.app) (默认解析)
 - [Cloudflare Pages](https://blog.luckey.icu)
-- [Deno Deploy](https://deno.luckey.icu)
 - [Github Page](https://github.luckey.icu)
 - [Vercel](https://tianmeng.vercel.app) (默认解析)
 
+## 计划
+- [ ] 从B站搬专栏过来
 
 ## 天梦的简介
 
